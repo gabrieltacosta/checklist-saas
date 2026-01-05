@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: checklist_db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=checklist_db
+      - POSTGRES_USER=hawkdev
+      - POSTGRES_PASSWORD=rE154720
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+    driver: local
