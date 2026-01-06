@@ -19,5 +19,10 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   runtime: "nodejs", // Required for auth.api calls
-  matcher: ["/dashboard/:path*", "/checklist/:path*", "/billing"], // Specify the routes the middleware applies to
+  matcher: [
+    "/dashboard/:path*",
+    "/checklist/:path*",
+    "/billing",
+    "/(api|trpc)(.*)",
+  ], // Specify the routes the middleware applies to
 };
